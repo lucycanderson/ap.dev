@@ -1,0 +1,13 @@
+<nav class="navigation {{ navigation }}">
+  <ul class="primary">
+    {% for link in linklists.main-menu.links %}
+      {% capture link_handle %}{{ link.title | handle | strip }}{% endcapture %}
+      <li class="main-nav">
+        <a class="main-nav-item" href="{{ link.url }}">{{ link.title }}</a>        
+      </li>
+    {% endfor %}
+    <li>
+      <a href="/account" class="account-link main-nav-item">account.</a>
+    </li>
+  </ul>
+</nav>

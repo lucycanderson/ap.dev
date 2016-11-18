@@ -1,0 +1,5 @@
+
+{% capture userFonts %}{{ settings.body-font }} {{ settings.logo-font }} {{ settings.heading-font }} {{ settings.section-heading-font }} {{ settings.meta-font }} {{ settings.primary-button-font }}{% endcapture %}
+{% if userFonts contains "'Raleway', sans-serif" %}
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+{% endif %}

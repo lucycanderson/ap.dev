@@ -1,0 +1,18 @@
+<h1 class="page-title">{{ page.title }}</h1> 
+{% case page.handle %}
+{% when 'ingredients' %}
+{% include 'in-page' %}
+{% when 'about' %}
+{% include 'us-page' %}
+{% when 'terms-conditions' %}
+{{ page.content }}
+{% when 'privacy-policy' %}
+{{ page.content }}
+{% when 'returns-and-refunds' %}
+{{ page.content }}
+{% when 'shipping-costs-and-times' %}
+{{ page.content }}
+{% endcase %}
+<div class="hidden-lg">
+  {% include 'buttons-footer-bar'%} 
+</div>

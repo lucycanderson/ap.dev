@@ -1,0 +1,74 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 lt-ie10 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>	
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">  
+  <title>ALMOST PEGGY</title>
+  <meta name="description" content="all natural organic face wash made with honey. for acne prone, oily and dry skin types. no chemicals. soap-free. non-comdogenic" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css" media="all">
+  <!-- Favicon and icons -->  
+  <link rel="icon" sizes="192x192" href="{{ 'favicon.ico' | asset_url }}" type="image/png"/>
+  <link rel="apple-touch-icon" href="{{ 'touch-icon-iphone.png' | asset_url }}" type="image/png"/>
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ 'touch-icon-ipad.png' | asset_url }}" type="image/png"/>
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ 'touch-icon-iphone-retina.png' | asset_url }}" type="image/png"/>
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ 'touch-icon-ipad-retina.png' | asset_url }}" type="image/png"/>     
+  <link rel="canonical" href="{{ canonical_url }}" />   
+  {{ content_for_header }}
+  {% include 'social-meta' %}	
+  <!-- Theme CSS -->
+  {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ "fontname.css"  | asset_url | stylesheet_tag }}
+  <!-- Third Party JS Libraries -->
+  {{ 'modernizr-2.7.1.min.js' | asset_url | script_tag }}
+  {{ 'jquery-1.10.0.min.js' | asset_url | script_tag }}
+  {{ 'bootstrap.min.js' | asset_url | script_tag }}
+  {{ 'almost-peggy-js.js' | asset_url | script_tag }}  
+  <!-- Store object -->
+  {% include 'theme-options' %}
+</head>
+<body class="{{page.handle}} {{ template }}{% if customer %}customer-logged-in{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} navigation-{{ settings.header-navigation-location }} {% if template == 'product.slideshow' %}template-product-slideshow{% endif %} over" >
+  {% include 'header' %}
+  {% if template contains 'product'%}
+  {% include 'full-width-banner'%}
+  {% endif %}
+  <div class="container" id="main-content-container">  
+    <main class="main-content{% if template contains 'collection' and collection.image and settings.collection-show-featured-image %}{% unless template contains 'list-collections' %}collection-has-featured-image{% endunless %}{% endif %}" role="main">
+      {{ content_for_layout }}
+    </main>
+  </div>
+  {% if template contains 'page'%}
+  {% include 'full-width-banner'%}
+  {% endif %}
+  {% include 'footer' %}
+  <!-- Scripts -->
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+  {% if template contains 'cart' %}
+  {% if settings.show-shipping-calculator %}
+  {{ "https://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" | script_tag }}
+  {{ "/services/javascripts/countries.js" | script_tag }}
+  {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+  {% endif %}
+  {{ 'jquery.cart.min.js' | asset_url | script_tag }}
+  {% endif %}
+  {% if template contains 'customers' %}
+  {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  {% endif %}
+  {% if settings.show-currency-switcher %}
+  {{ "//cdn.shopify.com/s/javascripts/currencies.js" | script_tag }}
+  {% endif %}
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  {{ 'plugins.js'  | asset_url | script_tag }}
+  {{ 'site.js'  | asset_url | script_tag }}
+  {{ 'sticky-kit.js' | asset_url | script_tag }}
+  {% include 'currencies' %}
+</body>
+</html>

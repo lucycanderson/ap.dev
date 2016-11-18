@@ -1,0 +1,28 @@
+$(document).ready(function() {
+
+  // get the full URL at the address bar
+  var url = window.location.href;
+
+  // passes on every "a" tag
+  $(".main-nav a").each(function() {
+    // checks if its the same on the address bar
+    if (url == (this.href)) {
+      $(this).closest("li").addClass("active");
+    }
+  });
+
+  $('[data-toggle="popover"]').popover({
+    container: 'body',
+    html : true
+  });
+  
+  // header sticky to top
+  $('.sticky-header').stick_in_parent({parent:'body'});
+
+  // show cart updated modal
+  if($('.buy-button').click(function() {
+    $('#cart-updated-modal').modal('show');
+  }));
+
+});
+

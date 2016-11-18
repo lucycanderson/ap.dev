@@ -1,0 +1,16 @@
+<div class="footer-link-list social-icons">
+  {% if settings.footer-show-headers %}
+    <h4>{{ 'general.social.title' | t }}</h4>
+  {% endif %}
+  <ul>
+    {% if settings.social-facebook-url != blank %}
+      <li class="social-link facebook"><a href="{{ settings.social-facebook-url }}" target="_blank">Facebook</a></li>
+    {% endif %}
+    {% if settings.social-pinterest-url != blank %}
+      <li class="social-link pinterest"><a href="{{ settings.social-pinterest-url }}" target="_blank">Pinterest</a></li>
+    {% endif %}
+    {% if settings.social-instagram-url != blank %}
+      <li class="social-link instagram"><a href="{{ settings.social-instagram-url }}" target="_blank">Instagram</a></li>
+    {% endif %}
+  </ul>
+</div>

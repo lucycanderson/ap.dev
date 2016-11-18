@@ -1,0 +1,101 @@
+<!-- form submitted successfully modal-->
+<div class="modal fade email-success-modal signup-modal-message" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="width: 550px;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" style="text-align: center;">you're almost signed up.<br /><span style="font-size: 40px">(whoop!)</span></h4>
+      </div>
+      <div class="modal-body message" style="padding-bottom: 0; paddin-top: 0; text-align: center;">
+      <p>check your inbox to complete the process.</p>
+        <img src="{{ 'ap-mermaid-dog.svg' | asset_url }}" class="rotate360 merdog" style="max-height: 200px; width: auto; text-align: center;"/>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- form submitted error modal-->
+<div class="modal fade signup-modal-message" id="signup-error-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">oops!</h4>
+      </div>
+      <div class="modal-body message">
+      <p>something in your email is awry.<br/> give it another whirl.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="mailing-list-signup center" id="mailing-list-signup">
+    <div class="container center inside" id="mailing-list-container">        
+      <div class="row">
+        <img class="hidden-md hidden-lg shake startshake" src="{{ 'ap-envelope-legs.svg' | asset_url }}" id="xs-screen-envelope" style="max-width: 120px;"/>
+        <div class="col-sm-12 col-md-4 subscribe-text-div">
+          <h3>stay in the loop.</h3>
+          <p style="font-size:16px;">join the ALMOST PEGGY mailing list.</p>
+        </div>
+        <div class="col-sm-12 col-md-2 subscribe-img-div">
+          <img class="hidden-xs hidden-sm shake startshake" src="{{ 'ap-envelope-legs.svg' | asset_url }}"/>
+        </div>
+        <div class="col-sm-12 col-md-6 subscribe-form-div">
+          {% if settings.mailing-list-platform != 'shopify-customer' and settings.mailing-list-action-url != '' %}
+          <form class="mc-embedded-subscribe-form" id="mailinglist-form" action="https://almostpeggy.us13.list-manage.com/subscribe/post-json?u=fd4a6dda57553f44a1944c8e2&id=6673ee28fa&c=?" method="POST">
+            <input class="mailing-list-email" name="MERGE0" type="email" placeholder="your@email.com" value="" required>
+            <input class="submit" name="subscribe" type="submit" value="sign me up!" />           
+            <script>
+              $(document).ready( function () {
+                var $form = $('.mc-embedded-subscribe-form');
+                $form.submit(function (ev) {
+                  $.ajax({
+                    type: $form.attr('method'),
+                    url: $form.attr('action'),
+                    data: $form.serialize(),
+                    cache       : false,
+                    dataType    : 'json',
+                    contentType: "application/json; charset=utf-8",
+                    error       : function(err) { alert("could not connect to the registration server. please try again later."); },
+                    success     : function(data) {
+                      if (data.result != "success") {
+                        $('div.modal-body.message').html(data.msg);
+                        $('#signup-error-modal').modal('show');
+                        $("#mailinglist-form")[0].reset();
+                      } else {
+                        $('.email-success-modal').modal('show');
+                        $("#mailinglist-form")[0].reset();
+                      }
+                    }
+                  });
+                  ev.preventDefault();
+                });
+              });
+            </script>
+          </form>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var images = [
+     {src : '{{ 'ap-light-pink.png' | asset_url }}'},
+     {src : '{{ 'ap-pink-blue-dots.png' | asset_url }}'},
+     {src : '{{ 'ap-white-blue-dots.png' | asset_url }}'},
+     {src : '{{ 'ap-grey-blue-dots.png' | asset_url }}'},
+     {src : '{{ 'ap-navy-blue.jpg' | asset_url }}'}
+     ];
+     function setBackground (images) {
+     var n = Math.floor(Math.random() * images.length),
+     textProperty = 'textContent' in document ? 'textContent' : 'innerText';
+     var mailingList = document.getElementById("mailing-list-signup");
+     mailingList.style.backgroundImage = 'url(' + images[n].src + ')';
+    }
+    setBackground(images); 
+
+    $('.signup-modal-message').on('hidden.bs.modal', function () {
+    	location.reload();
+  	})
+  </script>

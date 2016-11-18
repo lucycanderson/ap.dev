@@ -1,0 +1,88 @@
+<!-- find product page top banner html in theme.liquid so can be display at full width outside main-content div -->
+{% assign selectedVariant = product.selected_or_first_available_variant | default: product %}
+
+<div id="product-page">
+
+  <div class="row hidden-lg">
+    <div class="col-sm-6">
+      <img class="hidden-xs" alt="face honey. ready to #facethehoney?" src="{{ 'it-banner-xs.jpg' | asset_url }}">    
+    </div>
+    <div class="col-sm-6">
+      <h2 style="margin-bottom: 0;">face honey.</h2>
+      <h4 style="font-size: 40px;">honey to wash your face with.</h4>
+      <div class="hidden-xs">{% include 'add-to-cart-elements'%}</div>
+      <img class="hidden-sm hidden-md hidden-lg" alt="face honey. ready to #facethehoney?" src="{{ 'it-banner-xs.jpg' | asset_url }}">
+    </div>   
+  </div>  
+  <div class="hidden-sm hidden-md hidden-lg">
+    <hr />
+    {% include 'add-to-cart-elements'%}      
+  </div>
+  <div id="buy-face-honey"></div> <!-- bookmark for 'buy' button -->
+  <hr />
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>face honey is.</h2>
+      <p>an all-natural face wash.</p>
+      <p>it harnesses the antioxidant, antibacterial and moisture-balancing properties of honey.</p>
+      <p>made in melbourne from raw, unheated, australian honey, plus some of nature’s other best skin heroes, face honey promotes smoother, healthier and clearer skin for all skin types.</p>
+      <p>learn all about them on the <a href="/pages/ingredients/">in</a> page.</p>
+    </div>
+    <div class="col-sm-6">
+      <img alt="face honey. ready to #facethehoney?" src="{{ 'it-hands.jpg' | asset_url }}">
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row">
+    <div class="col-sm-6">
+      <img class="hidden-xs" alt="face honey. ready to #facethehoney?" src="{{ 'it-wood.jpg' | asset_url }}">
+    </div>
+    <div class="col-sm-6">
+      <h2>face honey isn't.</h2>
+      <p>full of nasties.</p>
+      <p>face honey is 100% natural skin care. it has no harmful, synthetic or petro-chemicals, no sodium laureth sulfate (sles), no microbeads. it's soap-free, alcohol-free and paraben-free. plus it’s non-comedogenic so it won't clog your pores.</p>
+      <p>but pssst! it’s for your face, don’t eat!</p>
+      <p>learn what it <em>does</em> contain on the <a href="/pages/ingredients/">in</a> page!</p>
+      <img class="hidden-sm hidden-md hidden-lg" alt="face honey. ready to #facethehoney?" src="{{ 'it-wood.jpg' | asset_url }}">
+    </div>    
+  </div>
+
+  <hr />
+
+  <div class="row">  
+    <div class="col-sm-6">
+      <h2>#facethehoney</h2>
+      <p>is made in melbourne for skin everywhere.</p>
+      <p>try it on yours and share how you #facethehoney</p>
+      <p><a href="https://www.instagram.com/almostpeggy/"><img alt="ALMOST PEGGY instagram" class="product-social-media" src="{{ 'instagram-black.png' | asset_url }}"> </a> 
+        <a href="https://www.facebook.com/almostpeggy"><img alt="ALMOST PEGGY facebook" class="fb product-social-media" src="{{ 'facebook-black.png' | asset_url }}"> </a>
+        <a href="https://au.pinterest.com/almostpeggy/"><img alt="ALMOST PEGGY pinterest" class="product-social-media" src="{{ 'pinterest-black.png' | asset_url }}"> </a></p>
+    </div>
+    <div class="col-sm-6">
+      <img class="img-product-product-page" alt="face honey. ready to #facethehoney?" src="{{ 'it-bath.jpg' | asset_url }}">
+    </div>
+  </div>
+
+  <div class="modal fade" id="cart-updated-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">cart updated.</h4>
+        </div>
+        <div class="modal-body-cart-update">
+          <p>go to <a href="/cart">cart.</a></p>
+          <p><a href="/checkout">check out.</a></p>
+          <img src="{{ 'ap-mermaid-dog.svg' | asset_url }}" class="rotate360 merdog" style="max-height: 200px; width: auto; margin-top: 30px;"/>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <script>
+    // required for splitting variants
+    // see ProductView
+    window.productJSON = {{ product | json }};
+  </script>

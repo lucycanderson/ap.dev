@@ -1,0 +1,27 @@
+<span class="hidden-lg">
+  <br />
+  <br />
+  <br />
+</span>
+<div class="hidden-xs hidden-sm hidden-md">
+  <div class="container-fluid" id="banner-row">
+    <div class="container" style="padding: 0;">
+      <div class="col-sm-6" id="fh-is-product-page">
+        {% if template == 'product' %}
+        <div class="hidden-xs" style="position: absolute; top: 50%; left: 50%; width: 100%; transform: translate(-50%, -60%);">
+          <h1 style="margin-bottom: 0;">face honey.</h1>
+          <h3>honey to wash your face with.</h3>
+          {% include 'add-to-cart-elements'%}
+        </div>
+        {% else %}
+        <div style="position: absolute; top: 50%; left: 50%; width: 100%; transform: translate(-50%, -60%);">
+          <h2 style="font-size: 75px;">face honey.</h2>
+          <h3 class="tag-line">honey to wash your face with.</h3>      
+          <h4 style="font-size: 40px;">$26.95</h4>
+          {% include 'footer-buttons'%}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

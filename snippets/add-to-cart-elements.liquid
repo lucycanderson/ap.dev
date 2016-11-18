@@ -1,0 +1,32 @@
+<div id="product-info">
+  <div class="product-wrap" data-product-id="{{ product.id }}">
+    <form class="product-form" id="product-form" action="/cart/add" method="post">
+      {% if product.variants.size > 1 %}
+      <div class="product-options">
+        <select name="id" id="product-select" class="product-select">
+          {% for variant in product.variants %}
+          <option {% if variant == selectedVariant %} selected="selected" {% endif %} value="{{ variant.id }}" data-sku="{{ variant.sku }}">{{ variant.title }} - {{ variant.price | money }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      {% else %}
+      <input type="hidden" name="id" class="product-select" value="{{ product.variants[0].id }}" data-variant-title="{{ product.variants[0].title }}" />
+      {% endif %}
+      <div id="infiniteoptions-container"></div>
+      <div id="uploadery-container"></div>
+      <meta itemprop="price" content="{{ selectedVariant.price | money }}">        
+      <h4 style="font-size: 40px;" class="money">{{ selectedVariant.price | money }}</h4>
+      <div class="input-wrapper product-quantity">
+        <input type="text" name="quantity" id="quantity" value="1" style="font-size: 15px; font-weight: bold;"/><label for="quantity" style="margin: auto;">how many?</label>       
+      </div>      
+      <div class="add-to-cart">
+        <div class="product-form-submit-wrap">
+          <input class="buy-button" type="submit" value="add to cart." style=""/>
+          <a href="/pages/ingredients" class="ingredients-button button secondary">ingredients.</a>
+          <div class="add-to-cart-loader"></div>
+        </div>              
+        <p class="product-add-error-message"></p>       
+      </div>
+    </form>
+  </div>
+</div>

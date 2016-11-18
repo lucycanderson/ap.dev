@@ -1,0 +1,38 @@
+{% assign product = all_products[settings.home-order-now-product] %}
+{% if product %}
+{% assign selectedVariant = product.selected_or_first_available_variant | default: product %}
+<div class="home-module-wrapper home-hero">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="col-sm-6">
+        <div class="home-hero-text">
+          <h2>face honey.</h2>
+          <h3 class="tag-line">honey to wash your face with.</h3>
+          <div class="hidden-xs">
+          <h4 class="product-price">
+            <span class="price">
+              <span class="money">{{ selectedVariant.price | money }}</span>
+            </span>
+          </h4>
+          <a class="button btn" href="{{ settings.home-hero-url }}">about face honey.</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-xs-12">
+        <div class="home-hero-image">
+          <img alt="face honey image" style="" src="{{ 'homepage-face-honey-packet.jpg' | asset_url }}">
+        </div>
+      </div>
+      <div class="hidden-sm hidden-md hidden-lg home-hero-xs-elements">
+        <br />
+      <h4 class="product-price">
+            <span class="price">
+              <span class="money">{{ selectedVariant.price | money }}</span>
+            </span>
+          </h4>
+          <a class="button btn" href="{{ settings.home-hero-url }}">about face honey.</a>
+      </div>
+      </div>
+  </div>
+</div>
+{% endif %}
