@@ -23,12 +23,12 @@ $(document).ready(function() {
   if($('.add-to-cart-button').click(function() {
     // show cart updated modal
     $('#cart-updated-modal').modal('show');
+    // re-load page on modal close to update cart
+    $('#cart-updated-modal').on('hidden.bs.modal', function () {
+        location.reload();
+    });
 
   }));
-
-    $('#cart-updated-modal').on('hidden.bs.modal', function (e) {
-      location.reload();
-    })
 
 });
 
