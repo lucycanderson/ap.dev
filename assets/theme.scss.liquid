@@ -2031,11 +2031,11 @@ html {
     a.cart-link {
       padding: 0 5px 0 15px;
       //@include iconFont(25px);
-      font-size: 35px;
+      font-size: 20px;
       font-family: $ap-body-font;
       color: #FFF;
       cursor: pointer;
-      position: relative;	
+      //position: relative;	
 
 
       @include breakpoint(m) {
@@ -2043,7 +2043,7 @@ html {
       }
 
       @include breakpoint(s) {
-        font-size: 32px;
+        font-size: 20px;
         padding: 0;
       }
 
@@ -2075,6 +2075,15 @@ html {
           left: -15px;
           top: 10px;
         }      */
+      }
+    }
+    .cart-count span.money {
+      font-size: 11px;
+      color: #FFFFFF;
+      display: inline-block;
+
+      @include breakpoint(s) {
+        padding-left: 6px;
       }
     }
   }
