@@ -1,3 +1,5 @@
+{% assign product = all_products[settings.home-order-now-product] %}
+{% assign selectedVariant = product.selected_or_first_available_variant | default: product %}
 <span class="hidden-lg">
   <br />
   <br />
@@ -6,22 +8,18 @@
 <div class="hidden-xs hidden-sm hidden-md">
   <div class="container-fluid" id="banner-row">
     <div class="container" style="padding: 0;">
-      <div class="col-sm-6" id="fh-is-product-page"> 
-        {% if template == 'index' or template == 'product' %}
+      <div class="col-sm-6" id="fh-is-product-page">      
         <div class="hidden-xs" style="position: absolute; top: 50%; left: 50%; width: 100%; transform: translate(-50%, -60%);">
           <h1 style="margin-bottom: 0; font-size: 130px;">face honey.</h1>
           <h3>honey to wash your face with.</h3>
           {% include 'add-to-cart-elements'%}
-        </div>
-        {% else %}
-        <div style="position: absolute; top: 50%; left: 50%; width: 100%; transform: translate(-50%, -60%);">
-          <h2 style="font-size: 75px;">face honey.</h2>
-          <h3 class="tag-line">honey to wash your face with.</h3>      
-          <h4 style="font-size: 40px; letter-spacing: 1.5px;">{{ selectedVariant.price | money }}</h4>
-          {% include 'footer-buttons'%}
-        </div>
-        {% endif %}
+        </div>       
       </div>
     </div>
   </div>
 </div>
+<script>
+  // required for splitting variants
+  // see ProductView
+  window.productJSON = {{ product | json }};
+</script>

@@ -33,7 +33,7 @@
   <!-- Store object -->
   {% include 'theme-options' %}
 </head>
-<body class="{% if customer %}customer-logged-in{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} navigation-{{ settings.header-navigation-location }} {% if template == 'product.slideshow' %}template-product-slideshow{% endif %}" >
+<body class="{{page.handle}} {% if customer %}customer-logged-in{% endif %} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} navigation-{{ settings.header-navigation-location }} {% if template == 'product.slideshow' %}template-product-slideshow{% endif %}" >
   {% include 'header' %}
   {% if template == 'index' or template == 'product' %}
     {% include 'full-width-banner'%}
