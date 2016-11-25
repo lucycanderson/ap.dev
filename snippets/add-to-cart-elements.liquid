@@ -1,3 +1,6 @@
+{% assign product = all_products[settings.home-order-now-product] %}
+{% if product %}
+<div class="home-module home-order-now">
 <div id="product-info">
   <div class="product-wrap" data-product-id="{{ product.id }}">
     <form class="product-form" id="product-form" action="/cart/add" method="post">
@@ -15,18 +18,38 @@
       <div id="infiniteoptions-container"></div>
       <div id="uploadery-container"></div>
       <meta itemprop="price" content="{{ selectedVariant.price | money }}">        
-      <h4 style="font-size: 40px;" class="money">{{ selectedVariant.price | money }}</h4>
-      <div class="input-wrapper product-quantity">
-        <input type="text" name="quantity" id="quantity" value="1" style="font-size: 15px; font-weight: bold;"/><label for="quantity" style="margin: auto;">how many?</label>       
-      </div>      
+      <h4 style="font-size: 40px; letter-spacing: 1.5px;" class="money">{{ selectedVariant.price | money }}</h4>
+      <!-- <div class="input-wrapper product-quantity">
+        <label for="quantity" style="margin: auto; letter-spacing: 1.5px;">how many packets?</label>&nbsp;&nbsp;<input type="text" name="quantity" id="quantity" value="1" style="font-size: 15px; font-weight: bold;"/>       
+      </div>  --> 
       <div class="add-to-cart">
         <div class="product-form-submit-wrap">
-          <input class="buy-button" type="submit" value="add to cart." style=""/>
+          <input class="add-to-cart-button" type="submit" value="add to cart." />      
           <a href="/pages/ingredients" class="ingredients-button button secondary">ingredients.</a>
           <div class="add-to-cart-loader"></div>
         </div>              
-        <p class="product-add-error-message"></p>       
+         {% capture cart_link %}
+              <a href="/cart">{{ 'products.product.cart_link' | t }}</a>
+            {% endcapture %}
+            {% capture continue_link %}
+              <a href="/collections/all">{{ 'products.product.continue_link' | t }}</a>
+            {% endcapture %}
+            {% capture checkout_link %}
+              <a href="/checkout">{{ 'products.product.checkout_link' | t }}</a>
+            {% endcapture %}
+            {% capture product_item %}
+              <span class='added-product-name'></span>
+            {% endcapture %}
+            <p class="product-add-success-message">{{ 'products.product.success_html' | t: cart_link: cart_link, continue_link: continue_link, checkout_link: checkout_link, product: product_item  }}</p>
+            <p class="product-add-error-message"></p>      
       </div>
     </form>
   </div>
 </div>
+    <script>
+      // required for splitting variants
+      // see ProductView
+      window.productJSON = {{ product | json }};
+    </script>
+</div>
+{% endif %}

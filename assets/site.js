@@ -1837,7 +1837,7 @@
       'switch-currency': 'switchCurrency',
       'reset-currency': 'resetCurrency'
     };
-
+    
     CurrencyView.prototype.initialize = function() {
       var doubleMoney, i, j, len, len1, money, ref, ref1;
       Currency.format = Theme.currencySwitcherFormat;

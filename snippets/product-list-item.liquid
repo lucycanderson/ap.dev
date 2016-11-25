@@ -1,7 +1,7 @@
 {% assign item = product %}
 {% if template contains 'search' %}
   {% assign item = item %}
-{% elsif template contains 'product' %}
+{% elsif template contains 'product' or template contains 'index' %}
   {% assign item = prod %}
 {% endif %}
 

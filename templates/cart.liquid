@@ -1,7 +1,6 @@
 <h1 class="page-title">{{ 'cart.general.header' | t }}</h1>
-
 {% if cart.item_count > 0 %}
-
+  <a href="/">continue shopping.</a>
   <form action="/cart" method="post">
 
     <table class="cart-items clean">
@@ -59,17 +58,9 @@
     </table>
 
     <div class="cart-tools">
-
-<!--       {% if settings.cart-show-special-instructions %}
-      <div class="cart-instructions">
-        <p>{{ 'cart.general.instructions_title' | t }}</p>
-        <textarea rows="6" name="note" placeholder="{{ 'cart.general.instructions_placeholder' | t }}">{{ cart.note }}</textarea>
-      </div>
-      {% endif %} -->
-
       <div class="cart-totals">
         <p class="cart-price"><span class="money">{{ cart.total_price | money }}</span></p>
-        <p class="cart-message meta">free shipping australia wide.<br />$5 flat international shipping.</p>
+        <p class="cart-message meta">free shipping Australia wide.<br />$5 international shipping.</p>
 
         <input type="submit" name="update" value="{{ 'cart.general.update_button' | t }}" class="secondary">
         <input type="submit" name="checkout" value="{{ 'cart.general.submit' | t }}">
@@ -133,6 +124,6 @@
 
 {% else %}
 
-  <p class="empty">{{ 'cart.general.empty' | t }} <a href="{{ shop.url }}/products/face-honey">{{ 'cart.general.continue' | t }}</a></p>
+  <p class="empty">{{ 'cart.general.empty' | t }} <a href="{{ shop.url }}">{{ 'cart.general.continue' | t }}</a></p>
 
 {% endif %}

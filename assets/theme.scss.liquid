@@ -663,7 +663,7 @@ $ap-black: #000; // black
 -------------------------------- */
 
 $ap-heading-font: 'cf_great_destinyregular', sans-serif;
-$ap-body-font: 'Raleway', sans-serif;
+$ap-body-font: 'Open Sans', sans-serif;
 
 body {
   font-family: $ap-body-font;
@@ -790,10 +790,10 @@ li {
 }
 
 hr {
-  height: 2px;
-  background: $ap-light-grey;
+  height: 1px;
+  background: $ap-light-pink;
   border: none;
-  color: $ap-light-grey;
+  //color: $ap-light-pink;
   margin: 50px 0 50px 0;
   @include breakpoint(s) {
     margin: 30px 0 30px 0;
@@ -1368,7 +1368,7 @@ div.page-h1-title {
   padding: 0; 
 }
 
-// product page container-fluid row (outside product page to achieve full screen width)
+// product bannercontainer-fluid row (outside main-content to achieve full screen width)
 body {
 
   #banner-row {
@@ -1443,7 +1443,8 @@ body {
   }
 }
 
-#product-page {
+#product-page,
+body.index {
 
   h2 {
     color: #000;
@@ -1465,11 +1466,13 @@ body {
     }    
   }
 }
+
 body.about {
   h1.page-title {
     padding-left: 15px;
   }
 }
+
 #us-page {
 
   div.img {

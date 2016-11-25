@@ -19,8 +19,9 @@ $(document).ready(function() {
   // header sticky to top
   $('.sticky-header').stick_in_parent({parent:'body'});
 
-  // show cart updated modal
-  if($('.buy-button').click(function() {
+  
+  if($('.add-to-cart-button').click(function() {
+    // show cart updated modal
     $('#cart-updated-modal').modal('show');
   }));
 
