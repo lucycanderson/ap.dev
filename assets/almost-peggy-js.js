@@ -23,7 +23,12 @@ $(document).ready(function() {
   if($('.add-to-cart-button').click(function() {
     // show cart updated modal
     $('#cart-updated-modal').modal('show');
+
   }));
+
+    $('#cart-updated-modal').on('hidden.bs.modal', function (e) {
+      location.reload();
+    })
 
 });
 
