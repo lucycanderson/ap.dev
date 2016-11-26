@@ -2030,51 +2030,22 @@ html {
     }
     a.cart-link {
       padding: 0 5px 0 15px;
-      //@include iconFont(25px);
-      font-size: 20px;
+      font-size: 25px;
       font-family: $ap-body-font;
       color: #FFF;
       cursor: pointer;
-      //position: relative;	
-
 
       @include breakpoint(m) {
-        padding-left: 20px;
+        padding-left: 25px;
       }
 
       @include breakpoint(s) {
-        font-size: 20px;
+        font-size: 23px;
         padding: 0;
       }
 
       .cart-count {
         display: none;
-/*         position: absolute;
-        z-index: 10;
-        top: 6px;
-        right: -10px;
-        left: -50px;
-        color: #000;
-        font-weight: 500;
-        text-align: center;
-        font-size: 13px;
-        font-family: $ap-body-font;
-        padding-left: 50px;
-
-        &:hover{
-          color: #FFF; 
-        }
-
-        @include breakpoint(m) {
-          padding-left: 20px;
-          left: -20px;
-        }
-
-        @include breakpoint(s) {
-          padding-left: 0;
-          left: -15px;
-          top: 10px;
-        }      */
       }
     }
     .cart-count span.money {
@@ -2088,7 +2059,6 @@ html {
     }
   }
 }
-
 
 // see _navigation.scss
 @import "navigation";
