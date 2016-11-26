@@ -668,8 +668,12 @@ $ap-body-font: 'Open Sans', sans-serif;
 body {
   font-family: $ap-body-font;
   color: #000;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: lighter;
+
+  @include breakpoint(s) {
+    font-weight: normal;
+  }
 }
 
 .icon {
@@ -746,8 +750,13 @@ h6 {
 
 p {
   font-family: $ap-body-font;
-  font-size: 18px;
+  font-size: 19px;
   color: #000;
+  font-weight: lighter;
+
+  @include breakpoint(s) {
+    font-weight: normal;
+  }
 }
 
 .section-title {
