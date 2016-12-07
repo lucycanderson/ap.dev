@@ -280,7 +280,7 @@ $easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
 @mixin breakpoint($point) {
   // high resolution devices
   @if $point == xl {
-    @media	only screen and (-webkit-min-device-pixel-ratio: 1.3),
+    @media  only screen and (-webkit-min-device-pixel-ratio: 1.3),
       only screen and (-o-min-device-pixel-ratio: 13/10),
       //only screen and (min-resolution: 120dpi), -- breaks ie
       only screen and (min-resolution: 2dppx)
@@ -1732,10 +1732,16 @@ html {
   z-index: 2;
 
   .main-footer{
-
+  
     .row.footer-items {
       padding-bottom: 20px;
       margin-top: 20px;
+      
+      #footer-logo {
+        @include breakpoint(s) {
+          margin-bottom: 15px;          
+        }       
+      }
 
       .footer-link-list {
         float: left;
@@ -1755,7 +1761,7 @@ html {
           }
         }
       }
-      div.col-sm-6.col-xs-12 {
+      div.col-sm-5.col-xs-12 {
         padding: 0;
         .footer-text {
           clear: both !important;
@@ -1777,7 +1783,7 @@ html {
             float: none !important;
           }
         }
-        div.footer-social-icons { 		
+        div.footer-social-icons {     
           clear: both;
           @include breakpoint(s) {
             display: block;
@@ -5529,11 +5535,11 @@ body div.main-header-wrapper header.main-header div.container{
   -webkit-animation:   merdog  1s 2 ease-in; 
   -moz-animation:      merdog  1s 2 ease-in; 
   -o-animation:        merdog  1s 2 ease-in;
-  animation:            		merdog 1s 2, shake 2s;
-  animation-fill-mode: 			none;
-  animation-direction: 			alternate;
-  animation-timing-function:  	ease-in;
-  animation-delay: 				0s, 2s;
+  animation:                merdog 1s 2, shake 2s;
+  animation-fill-mode:      none;
+  animation-direction:      alternate;
+  animation-timing-function:    ease-in;
+  animation-delay:        0s, 2s;
 }
 
 @keyframes merdog { 
@@ -5576,12 +5582,12 @@ body div.main-header-wrapper header.main-header div.container{
 }
 
 .levitate {
-  -webkit-animation:   			levitate  2s 1 ease-in; 
-  -moz-animation:      			levitate  2s 1 ease-in; 
-  -o-animation:        			levitate  2s 1 ease-in;
-  animation:            		levitate 2s 1;
-  animation-fill-mode: 			none;
-  animation-timing-function:  	ease-in;
+  -webkit-animation:        levitate  2s 1 ease-in; 
+  -moz-animation:           levitate  2s 1 ease-in; 
+  -o-animation:             levitate  2s 1 ease-in;
+  animation:                levitate 2s 1;
+  animation-fill-mode:      none;
+  animation-timing-function:    ease-in;
 }
 
 @keyframes levitate { 
@@ -5602,22 +5608,22 @@ body div.main-header-wrapper header.main-header div.container{
   -webkit-animation:   shake 1.5s 4 ease-in; 
   -moz-animation:      shake 1.5s 4 ease-in; 
   -o-animation:        shake 1.5s 4 ease-in;
-  animation:            		shake 1.5s 4;
-  animation-fill-mode: 			none;
-  animation-direction: 			alternate;
-  animation-timing-function:  	ease-in;
+  animation:                shake 1.5s 4;
+  animation-fill-mode:      none;
+  animation-direction:      alternate;
+  animation-timing-function:    ease-in;
 }
 
 .doshrink {
-  -webkit-animation:   			doshrink  2s 1 ease-in; 
-  -moz-animation:      			doshrink  2s 1 ease-in; 
-  -o-animation:        			doshrink  2s 1 ease-in;
-  animation:            		doshrink 2s 1;
-  animation:            		doshrink 2s 1, shake 2s;
-  animation-fill-mode: 			none;
-  animation-direction: 			alternate;
-  animation-timing-function:  	ease-in;
-  animation-delay: 				0s, 2s;
+  -webkit-animation:        doshrink  2s 1 ease-in; 
+  -moz-animation:           doshrink  2s 1 ease-in; 
+  -o-animation:             doshrink  2s 1 ease-in;
+  animation:                doshrink 2s 1;
+  animation:                doshrink 2s 1, shake 2s;
+  animation-fill-mode:      none;
+  animation-direction:      alternate;
+  animation-timing-function:    ease-in;
+  animation-delay:        0s, 2s;
 }
 
 @keyframes doshrink{
@@ -5692,4 +5698,3 @@ body div.banner div.wrap a.logo.logo--center {
     @include transform(translateX(-260px));
   }
 }
-
