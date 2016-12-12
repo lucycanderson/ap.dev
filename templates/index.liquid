@@ -3,128 +3,126 @@
 {% assign selectedVariant = product.selected_or_first_available_variant | default: product %}
 
 <div id="product-page">
-  <div class="row hidden-lg">
+  <div class="row hidden-md hidden-lg">
     <div class="col-sm-6">
-      <img class="hidden-xs" alt="face honey. ready to #facethehoney?" src="{{ 'it-banner-xs.jpg' | asset_url }}">    
+     <h1 style="margin-bottom: 0;">face honey.</h1>
+      <h4 style="font-size: 40px;">honey to wash your face with.</h4><br />
+      <div class="hidden-xs">{% include 'add-to-cart-elements'%}</div>     
     </div>
     <div class="col-sm-6">
-      <h1 style="margin-bottom: 0;">face honey.</h1>
-      <h4 style="font-size: 40px;">honey to wash your face with.</h4><br />
-      <div class="hidden-xs">{% include 'add-to-cart-elements'%}</div>
-      <img class="hidden-sm hidden-md hidden-lg" alt="face honey. ready to #facethehoney?" src="{{ 'it-banner-xs.jpg' | asset_url }}">
+      <img class="hidden-md hidden-lg" alt="face honey. ready to #facethehoney?" src="{{ 'it-banner-xs.jpg' | asset_url }}">
     </div>   
   </div>  
   <div class="hidden-sm hidden-md hidden-lg">
     <br />
     {% include 'add-to-cart-elements'%}      
   </div>
-  <hr /> 
-  <div class="row">  
-    <div class="col-sm-6">
+  <a class="arrow-wrap hidden-sm hidden-xs" href="#content">
+    <span class="arrow"></span>
+    <!--<span class="hint">scroll</span>-->
+  </a>
+  <div id="content" class="hidden-sm hidden-xs" style="height: 80px;"></div> 
+  <hr />
+  <div class="row">
+    <div class="col-sm-6 content-section">
+    <img class="hidden-xs" alt="prevent acne, blemishes and breakouts with ALMOST PEGGY's face honey" src="{{ 'banish-heckin-blemishes.jpg' | asset_url }}">
+    </div>
+    <div class="col-sm-6 content-section">
+       <h2>banish heckin blemishes.</h2>
+      <p>breaking out on your face instead of the dance floor? we know the feeling <img alt="Rolling eyes emojie" src="{{ 'rolling-eyes-emojie.jpg' | asset_url }}">.</p> 
+      <p>get the ultimate pimple prevention with face honey. the antibacterial, antimicrobial, antioxidant, anti inflammatory properties and high linoleic acid composition, means you can shut the front door on acne causing bacteria!</p>
+      <img class="hidden-sm hidden-md hidden-lg" style="padding-top: 30px;" alt="prevent acne, blemishes and breakouts with ALMOST PEGGY's face honey" src="{{ 'banish-heckin-blemishes.jpg' | asset_url }}">
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-sm-6 content-section">
       <h2>earth mammy to the rescue.</h2>
       <p>we've gone back to basics to gather the best ingredients that are natural, organic and healthy for your skin.</p>
       <p>face honey is 100% free of synthetic and petrochemicals, paraben-free, and has no nasty SLES, meaning your skin can 
       ditch the chemicals completely!</p>
     </div>
-    <div class="col-sm-6">
-      <img class="img-product-product-page" alt="face honey is chemical-free" src="{{ 'face-honey-back-to-nature.jpg' | asset_url }}">
+    <div class="col-sm-6 content-section">
+      <img class="img-product-product-page" alt="face honey is 100% chemical-free" src="{{ 'chemical-free-infographic.jpg' | asset_url }}">
     </div>
   </div>
-
   <hr />
   <div class="row">
-    <div class="col-sm-6">
-      <h2>banish hecking blemishes.</h2>
-      <p>breaking out on your face instead of the dance floor? we know the feeling.<img alt="Rolling eyes emojie" src="{{ 'rolling-eyes-emojie.jpg' | asset_url }}"></p> 
-      <p>get the ultimate pimple prevention with face honey. the antibacterial, antimicrobial, antioxidant, anti inflammatory properties and high linoleic acid composition, means you can shut the front door on acne causing bacteria!</p> 
+    <div class="col-sm-6 content-section">
+      <img class="hidden-xs" alt="face honey. ready to #facethehoney?" src="{{ 'face-honey-exfoliates.jpg' | asset_url }}"> 
     </div>
-    <div class="col-sm-6">
-      <img alt="prevent acne, blemishes and breakouts with face honey" src="{{ 'face-honey-in-the-bath.jpg' | asset_url }}">
+    <div class="col-sm-6 content-section">
+    <h2>shed the past, exfoliate!</h2>
+      <p>let go of the cells that want to be free and jump aboard the face honey exfoliation train; next stop Smooth Town, population: your face!</p>
+      <p>with daily use, you’ll unclog your pores, shed yesterday’s nonsense and say <em>hey there</em> to a soft, clear and nourished complexion.</p>
+      <img class="hidden-sm hidden-md hidden-lg" style="padding-top: 20px;" alt="face honey. ready to #facethehoney?" src="{{ 'face-honey-exfoliates.jpg' | asset_url }}">          
     </div>
   </div>
-
   <hr />
 
   <div class="row">
-    <div class="col-sm-6">
-      <img class="hidden-xs" alt="face honey. ready to #facethehoney?" src="{{ 'face-honey-in-dish.jpg' | asset_url }}">
-    </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 content-section">      
       <h2>oil balanced - boom!</h2>
       <p>just like the perfect peanut butter, face honey won’t leave you oily or dry.</p>
       <p>whether you’re shiny by lunchtime; dry, cracked and itchy; sensitive to the core; or pretty much ‘normal’, your skin will thrive with face honey’s precise, non-comedogenic oil balancing act.</p>
       <p>but psst, it's for your face, don’t eat!</p>
-      <img class="hidden-sm hidden-md hidden-lg" alt="oil balancing forula for oil, dry, sensitebe and normal skin" src="{{ 'face-honey-in-the-bath.jpg' | asset_url }}">
+      <img class="hidden-sm hidden-md hidden-lg" alt="balance oil for oily and dry skin with ALMOST PEGGY's face honey" src="{{ 'oil-balancing.jpg' | asset_url }}">
+    </div>
+    <div class="col-sm-6 content-section">
+      <img class="hidden-xs" alt="balance oil for oily and dry skin with ALMOST PEGGY's face honey" src="{{ 'oil-balancing.jpg' | asset_url }}">
     </div>    
   </div>
 
   <hr />
-
   <div class="row">
-    <div class="col-sm-6">
-      <img alt="face honey in hands" src="{{ 'exfoliate-for-clearer-skin.jpg' | asset_url }}">
+    <div class="col-sm-6 content-section">
+       <img class="hidden-xs" alt="ALMOST PEGGY's face honey removes makeup gently, without chemicals" src="{{ 'after-party-face.jpg' | asset_url }}">
     </div>
-    <div class="col-sm-6">
-      <h2>shed the past, exfoliate!</h2>
-      <p>let go of the cells that want to be free and jump aboard the face honey exfoliation train; next stop Smooth Town, population: your face!</p>
-      <p>with daily use, you’ll unclog your pores, shed yesterday’s nonsense and say <em>hey there</em> to a soft, clear and nourished complexion.</p>      
-    </div>
-  </div>
-  <hr />
-  
- <div class="row">  
-    <div class="col-sm-6">
-      <img class="img-product-product-page" alt="ALMOST PEGGY does not test on animals. no animal curelty round these parts" src="{{ 'almost-peggy-with-dog.jpg' | asset_url }}">
-    </div>
-    <div class="col-sm-6">
-      <h2>animals be thy frens.</h2>
-      <p>ALMOST PEGGY is a crazy dog lady. there, we said it. she talks about dogs, posts about dogs, dreams about owning MORE DOGS - she really loves dogs! and not just dogs, all animals!</p>
-      <p>we do not test on animals and only use honey from apiaries that practice non-harmful, non-invasive harvesting and hive tending practices.</p>
-    </div>
-  </div>
-
-  <hr />
-
-  <div class="row">
-    <div class="col-sm-6">
-      <h2>an after party face-off.</h2>
+    <div class="col-sm-6 content-section">
+    <h2>an after party face-off.</h2>
       <p>what goes up must go down, the drain that is. clean off your makeup without exposing your skin to harsh chemicals and solvents.</p>
       <p>face honey’s alcohol, soap and paraben-free formula is a gentle, natural way to get fresh faced. as for microbeads, 
         heck no! wash away mascara not marine life!</p>
-      <img class="hidden-sm hidden-md hidden-lg" alt="face honey removes makeup" src="{{ 'face-honey-removes-makeup.jpg' | asset_url }}">
-    </div>
-    <div class="col-sm-6">
-      <img class="hidden-xs" alt="build skin health and interity with face honey" src="{{ 'face-honey-removes-makeup.jpg' | asset_url }}">
+      <img class="hidden-sm hidden-md hidden-lg" style="padding-top: 20px;" alt="ALMOST PEGGY's face honey removes makeup gently, without chemicals" src="{{ 'after-party-face.jpg' | asset_url }}">   
     </div>    
   </div>
-
   <hr />
-
   <div class="row">
-    <div class="col-sm-6">
-      <h2>earthlings unite!</h2>
+    <div class="col-sm-6 content-section">
+     <h2>earthlings unite!</h2>
       <p>face honey is created, designed and manufactured by locals to Brunswick, Melbourne Australia. but thanks to the virtues of the world wide web, we are a part of the global community movement toward a sustainable future.</p>
       <p>our packaging is totally recyclable so whether you’re in Richmond or Rio, pop the empty pack in the nearest recycling bin.</p>
-      <img class="hidden-sm hidden-md hidden-lg" alt="face honey. ready to #facethehoney?" src="{{ 'face-honey-in-yellow.jpg' | asset_url }}">
+      <img class="hidden-sm hidden-md hidden-lg" alt="face honey. ready to #facethehoney?" src="{{ 'earthlings-unite.jpg' | asset_url }}">
     </div>
-    <div class="col-sm-6">
-      <img class="hidden-xs" alt="face honey. ready to #facethehoney?" src="{{ 'face-honey-in-yellow.jpg' | asset_url }}">
+    <div class="col-sm-6 content-section">
+      <img class="hidden-xs" alt="recycle your face honey packaging and love the earth" src="{{ 'earthlings-unite.jpg' | asset_url }}">
     </div>    
   </div>
-
   <hr />
-
-  <div class="row">  
-    <div class="col-sm-6">
-      <img class="img-product-product-page" alt="face honey. ready to #facethehoney?" src="{{ 'face-honey-on-books.jpg' | asset_url }}">
+  <div class="row"> 
+    <div class="col-sm-6 content-section">  
+      <img class="img-product-product-page hidden-xs" alt="ALMOST PEGGY's face honey is cruelty-free" src="{{ 'cruelty-free-infographic.jpg' | asset_url }}">
     </div>
-    <div class="col-sm-6">
-      <h2>let's bee social.</h2>
+    <div class="col-sm-6 content-section">
+      <h2>animals be thy frens.</h2>
+      <p>ALMOST PEGGY is a crazy dog lady. there, we said it. she talks about dogs, posts about dogs, dreams about owning MORE DOGS - she really loves dogs! and not just dogs, all animals!</p>
+      <p>we do not test on animals and only use honey from apiaries that practice non-harmful, non-invasive harvesting and hive tending practices.</p>
+      <img class="img-product-product-page hidden-sm hidden-md hidden-lg" alt="ALMOST PEGGY's face honey is cruelty-free" src="{{ 'cruelty-free-infographic.jpg' | asset_url }}">
+    </div>
+  </div>
+  <hr />
+  <div class="row">  
+    <div class="col-sm-6 content-section">
+       <h2>let's bee social.</h2>
       <p>why not put your sweet cheeks forward and show us how you #facethehoney.</p>
       <p>keep us updated on your transformation and go in the draw for ALMOST PEGGY competitions and giveaways. double your chances by signing up to our newsletter below!</p>
       <p><a href="https://www.instagram.com/almostpeggy"><img alt="ALMOST PEGGY instagram" class="product-social-media" src="{{ 'instagram-black.jpeg' | asset_url }}"> </a> 
         <a href="https://www.facebook.com/almostpeggy"><img alt="ALMOST PEGGY facebook" class="fb product-social-media" src="{{ 'facebook-black.png' | asset_url }}"> </a>
         <a href="https://au.pinterest.com/almostpeggy"><img alt="ALMOST PEGGY pinterest" class="product-social-media" src="{{ 'pinterest-black.jpeg' | asset_url }}"> </a></p>
+        <img class="img-product-product-page hidden-sm hidden-md hidden-lg" style="padding-top: 20px;" alt="share you experience with us when you #facethehoney" src="{{ 'lets-bee-social.jpg' | asset_url }}">
+    </div>
+    <div class="col-sm-6 content-section">
+        <img class="img-product-product-page hidden-xs" alt="share you experience with us when you #facethehoney" src="{{ 'lets-bee-social.jpg' | asset_url }}">
     </div>
   </div> 
   

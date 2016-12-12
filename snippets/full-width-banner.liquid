@@ -1,11 +1,11 @@
 {% assign product = all_products[settings.home-order-now-product] %}
 {% assign selectedVariant = product.selected_or_first_available_variant | default: product %}
-<span class="hidden-lg">
+<span class="hidden-md hidden-lg">
   <br />
   <br />
   <br />
 </span>
-<div class="hidden-xs hidden-sm hidden-md">
+<div class="hidden-xs hidden-sm">
   <div class="container-fluid" id="banner-row">
     <div class="container" style="padding: 0;">
       <div class="col-sm-6" id="fh-is-product-page">      

@@ -800,7 +800,7 @@ li {
 
 hr {
   height: 1px;
-  background: $ap-light-pink;
+  background: $ap-light-grey;
   border: none;
   //color: $ap-light-pink;
   margin: 50px 0 50px 0;
@@ -1381,6 +1381,7 @@ div.page-h1-title {
 body {
 
   #banner-row {
+   
     width: 100%;
     background:url({{ 'it-banner.jpg ' | asset_url }});
     background-repeat: no-repeat;
@@ -1392,9 +1393,9 @@ body {
       padding: 0 30px 0 35px;
     }
 
-    @include breakpoint(s) {
+    @include breakpoint(xs) {
       background-image: none;
-      padding: 0 25px 0 25px;
+      //padding: 0 25px 0 25px;
     }
 
     div.hidden-sm.hidden-md.hidden-lg.container {
@@ -1457,6 +1458,23 @@ body.index {
 
   h2 {
     color: #000;
+
+    @include breakpoint(l) {
+      font-size: 75px;
+    }
+    @include breakpoint(s) {
+      font-size: 60px;
+    }
+  }
+
+  p {
+    @include breakpoint(l) {
+      font-size: 20px;
+    }
+    @include breakpoint(s) {
+      font-size: 20px;
+      font-weight: 500;
+    }
   }
 
   a:hover {
@@ -5698,3 +5716,84 @@ body div.banner div.wrap a.logo.logo--center {
     @include transform(translateX(-260px));
   }
 }
+.arrow-wrap {
+  position:absolute;
+  z-index:1;
+  left:50%;
+  top: 87%;
+  margin-left:-5em;
+  background:$ap-dark-grey;
+  width:10em;
+  height:10em;
+  padding:4em 2em;
+  border-radius:50%;
+  font-size:0.5em;
+  display:block;
+  box-shadow:0px 0px 10px 0px #333;
+
+  @include breakpoint(m){
+    top: 84%;
+  }
+}
+
+.arrow {
+  float:left;
+  position:relative;
+  width: 0px;
+height: 0px;
+border-style: solid;
+border-width: 3em 3em 0 3em;
+border-color: #ffffff transparent transparent transparent;
+  -webkit-transform:rotate(360deg)
+}
+
+.arrow:after {
+  content:'';
+  position:absolute;
+  top:-3.2em;
+  left:-3em;
+  width: 0px;
+height: 0px;
+border-style: solid;
+border-width: 3em 3em 0 3em;
+border-color: $ap-dark-grey transparent transparent transparent;
+  -webkit-transform:rotate(360deg)
+}
+
+
+.hint {
+  position:absolute;
+  top:0.6em;
+  width:100%;
+  left:0;
+  font-size:2em;
+  font-style:italic;
+  text-align:center;
+  color:#fff;
+  opacity:0;
+}
+
+
+.arrow-wrap:hover .hint {
+  opacity:1;
+}
+
+
+  @-webkit-keyframes arrows {
+    0% { top:0; }
+    10% { top:12%; }
+    20% { top:0; }
+    30% { top:12%; }
+    40% { top:-12%; }
+    50% { top:12%; }
+    60% { top:0; }
+    70% { top:12%; }
+    80% { top:-12%; }
+    90% { top:12%; }
+    100% { top:0; }
+  }
+  
+  .arrow-wrap .arrow {
+    -webkit-animation: arrows 2.8s 0.4s;
+    -webkit-animation-delay: 3s;
+  }
