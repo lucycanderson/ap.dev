@@ -2,6 +2,7 @@
   store: ""
 development:
   password: 79166f374bb26fdee12721f2510ac8b9
-  theme_id: "161171726"
+  theme_id: "111652291"
   store: almost-peggy.myshopify.com
   timeout: 30s
+:ignore_files: config/settings_data.json
