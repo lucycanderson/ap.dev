@@ -961,9 +961,9 @@
           };
         })(this));
       }
-      if (Theme.showInstagramWidget) {
-        return this.getInstagramImages();
-      }
+      // if (Theme.showInstagramWidget) {
+      //   return this.getInstagramImages();
+      // }
     };
 
     HomeView.prototype.headerBorderCheck = function() {
@@ -981,44 +981,44 @@
       }
     };
 
-    HomeView.prototype.getInstagramImages = function() {
-      var instagramWidget, photoContainer, url;
-      instagramWidget = this.$('.home-instagram');
-      photoContainer = this.$('.instagram-photos');
-      if (Theme.showInstagramTag) {
-        url = "https://api.instagram.com/v1/tags/" + Theme.instagramTag + "/media/recent?access_token=" + Theme.instagramAccessToken + "&count=6&callback=";
-      } else {
-        url = "https://api.instagram.com/v1/users/self/media/recent?access_token=" + Theme.instagramAccessToken + "&count=6&callback=";
-      }
-      return $.ajax({
-        type: "GET",
-        dataType: "jsonp",
-        url: url,
-        success: (function(_this) {
-          return function(response) {
-            var i, len, photo, ref, results;
-            if (response.meta.code === 200) {
-              ref = response.data;
-              results = [];
-              for (i = 0, len = ref.length; i < len; i++) {
-                photo = ref[i];
-                results.push(photoContainer.append("<a class='instagram-photo' target='_blank' href='" + photo.link + "'><img src='" + photo.images.low_resolution.url + "'/></a>"));
-              }
-              return results;
-            } else {
-              instagramWidget.remove();
-              return console.log("Instagram error: " + response.meta.error_message);
-            }
-          };
-        })(this),
-        error: (function(_this) {
-          return function(response) {
-            instagramWidget.remove();
-            return console.log("Instagram error: " + response.meta.error_message);
-          };
-        })(this)
-      });
-    };
+    // HomeView.prototype.getInstagramImages = function() {
+    //   var instagramWidget, photoContainer, url;
+    //   instagramWidget = this.$('.home-instagram');
+    //   photoContainer = this.$('.instagram-photos');
+    //   if (Theme.showInstagramTag) {
+    //     url = "https://api.instagram.com/v1/tags/" + Theme.instagramTag + "/media/recent?access_token=" + Theme.instagramAccessToken + "&count=6&callback=";
+    //   } else {
+    //     url = "https://api.instagram.com/v1/users/self/media/recent?access_token=" + Theme.instagramAccessToken + "&count=6&callback=";
+    //   }
+    //   return $.ajax({
+    //     type: "GET",
+    //     dataType: "jsonp",
+    //     url: url,
+    //     success: (function(_this) {
+    //       return function(response) {
+    //         var i, len, photo, ref, results;
+    //         if (response.meta.code === 200) {
+    //           ref = response.data;
+    //           results = [];
+    //           for (i = 0, len = ref.length; i < len; i++) {
+    //             photo = ref[i];
+    //             results.push(photoContainer.append("<a class='instagram-photo' target='_blank' href='" + photo.link + "'><img src='" + photo.images.low_resolution.url + "'/></a>"));
+    //           }
+    //           return results;
+    //         } else {
+    //           instagramWidget.remove();
+    //           return console.log("Instagram error: " + response.meta.error_message);
+    //         }
+    //       };
+    //     })(this),
+    //     error: (function(_this) {
+    //       return function(response) {
+    //         instagramWidget.remove();
+    //         return console.log("Instagram error: " + response.meta.error_message);
+    //       };
+    //     })(this)
+    //   });
+    // };
 
     HomeView.prototype.reflowRightLeftMedia = function() {
       if (this.$('.home-left-right-features').css('content') === '"large"') {

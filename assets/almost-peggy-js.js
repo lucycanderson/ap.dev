@@ -35,6 +35,7 @@ $(document).ready(function() {
       return getInstagramImages();
     }
     function getInstagramImages() {
+      
     var instagramWidget, photoContainer, url;
     instagramWidget = this.$('.home-instagram');
     photoContainer = this.$('.instagram-photos');
