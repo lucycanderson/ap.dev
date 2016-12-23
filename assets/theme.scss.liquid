@@ -1457,23 +1457,13 @@ body {
 body.index {
 
   h2 {
-    color: #000;
+    color: $ap-dark-pink;
 
     @include breakpoint(l) {
       font-size: 75px;
     }
     @include breakpoint(s) {
       font-size: 60px;
-    }
-  }
-
-  p {
-    @include breakpoint(l) {
-      font-size: 20px;
-    }
-    @include breakpoint(s) {
-      font-size: 20px;
-      font-weight: lighter;
     }
   }
 
@@ -4572,6 +4562,28 @@ width: auto;
 }
 }
 } */
+
+.instagram-photo {
+  display: inline-block;
+  padding: 0 15px;
+  width: 16.666%;
+  margin-bottom: 30px;
+  @include transition(none);
+
+  @include breakpoint(s) {
+    width: 33.333%;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.home-instagram-cta {
+  text-align: center;
+  margin-top: 30px;
+}
 
 .product-big-image {
   position: relative;

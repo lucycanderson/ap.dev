@@ -41,6 +41,12 @@
   <div class="container" id="main-content-container"> 
     <main class="main-content{% if template contains 'collection' and collection.image and settings.collection-show-featured-image %}{% unless template contains 'list-collections' %}collection-has-featured-image{% endunless %}{% endif %}" role="main">
       {{ content_for_layout }}
+      <!-- instagram feed -->
+  <hr />
+  <div class="home-module home-instagram">
+      <h2>instagram</h2>
+    <div class="instagram-photos"></div>
+  </div>
     </main>
   </div>
   {% if template contains 'page'%}
