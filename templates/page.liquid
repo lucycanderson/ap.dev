@@ -12,6 +12,13 @@
 {{ page.content }}
 {% when 'shipping-costs-and-times' %}
 {{ page.content }}
+{% when 'using-face-honey' %}
+<div id="using-fh">
+{{ page.content }}
+<p><a href="https://www.instagram.com/almostpeggy"><img alt="ALMOST PEGGY instagram" class="product-social-media" src="{{ 'instagram-black.jpeg' | asset_url }}"> </a> 
+<a href="https://www.facebook.com/almostpeggy"><img alt="ALMOST PEGGY facebook" class="fb product-social-media" src="{{ 'facebook-black.png' | asset_url }}"> </a>
+<a href="https://au.pinterest.com/almostpeggy"><img alt="ALMOST PEGGY pinterest" class="product-social-media" src="{{ 'pinterest-black.jpeg' | asset_url }}"> </a></p>
+</div>
 {% endcase %}
 <div class="hidden-lg">
   {% include 'buttons-footer-bar'%} 
