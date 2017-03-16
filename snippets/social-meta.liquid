@@ -5,30 +5,9 @@
   Validate your Pinterest rich pins
     - https://developers.pinterest.com/rich_pins/validator/
 {% endcomment %}
+<meta property="fb:app_id" content="110844262783565" />
 <meta property="og:site_name" content="{{ shop.name }}" />
 <meta property="og:url" content="{{ canonical_url }}" />
-<meta property="og:title" content="{{ page_title }}" />
-{% if page_description %}
-  <meta property="og:description" content="{{ page_description }}" />
-{% endif %}
-{% if template contains 'product' %}
-  <meta property="og:type" content="product">
-  {% for image in product.images %}
-    <meta property="og:image" content="http:{{ image | img_url: 'grande' }}" />
-    <meta property="og:image:secure_url" content="https:{{ image | img_url: 'grande' }}" />
-  {% endfor %}
-  <meta property="og:price:amount" content="{{ product.price | money_without_currency | stip_html | escape }}">
-  <meta property="og:price:currency" content="{{ shop.currency }}">
-{% elsif template contains 'article' %}
-  <meta property="og:type" content="article">
-  {% if article.image %}
-    <meta property="og:image" content="http:{{ article.image | img_url: 'grande' }}" />
-    <meta property="og:image:secure_url" content="https:{{ article.image | img_url: 'grande' }}" />
-  {% endif %}
-{% else %}
-  <meta property="og:type" content="website" />
-  {% if settings.use-logo %}
-    <meta property="og:image" content="http:{{ 'logo.png' | asset_url }}" />
-    <meta property="og:image:secure_url" content="https:{{ 'logo.png' | asset_url }}" />
-  {% endif %}
-{% endif %}
+<meta property="og:title" content="ALMOST PEGGY face honey." />
+<meta property="og:image" content="https:{{ 'facebook-og-image.jpg' | asset_url }}" />
+<meta property="og:description" content="an all-natural, exfoliating, raw-and-unheated-Australian-honey based daily skincare solution for all skin types. nourish, rejvenate and banish acne. free postage Australian wide! synthetic and petro-chemical free, paraben-free, soap-free, alcohol-free, no ocean destroying microbeads, all in a non-comedogenic formula." />
