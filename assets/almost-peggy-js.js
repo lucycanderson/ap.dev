@@ -30,6 +30,13 @@ $(document).ready(function() {
 
   }));
 
+    // initialise masonry grid
+  $('.grid').masonry({
+    // options
+    itemSelector: '.grid-item',
+    columnWidth: 200
+  });
+  
   // add instagram feed to all pages
   if (Theme.showInstagramWidget) {
       return getInstagramImages();
@@ -100,7 +107,7 @@ $(window).scroll( function(){
 });
 
 
-//Code stolen from css-tricks for smooth scrolling:
+//Code taken from css-tricks for smooth scrolling:
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

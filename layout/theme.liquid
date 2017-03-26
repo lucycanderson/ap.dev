@@ -4,7 +4,7 @@
 <!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie9 lt-ie10 no-js"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
-<head>	
+<head>  
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <!-- Viewport -->
@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="152x152" href="{{ 'touch-icon-ipad-retina.png' | asset_url }}" type="image/png"/>     
   <link rel="canonical" href="{{ canonical_url }}" />   
   {{ content_for_header }}
-  {% include 'social-meta' %}	
+  {% include 'social-meta' %} 
   <!-- Theme CSS -->
   {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
@@ -30,6 +30,7 @@
   {{ 'modernizr-2.7.1.min.js' | asset_url | script_tag }}
   {{ 'jquery-1.10.0.min.js' | asset_url | script_tag }}
   {{ 'bootstrap.min.js' | asset_url | script_tag }}
+  {{ 'masonry.pkgd.min.js' | asset_url | script_tag }}
   <!-- Store object -->
   {% include 'theme-options' %}
 </head>
@@ -76,7 +77,7 @@
   {{ 'site.js'  | asset_url | script_tag }}
   {{ 'sticky-kit.js' | asset_url | script_tag }}
   {{ 'almost-peggy-js.js' | asset_url | script_tag }}
-  <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58c9e7bed9414f07"></script>
-  <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58c9e7bed9414f07"></script> 
+  <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58c9e7bed9414f07"></script> 
 </body>
 </html>
