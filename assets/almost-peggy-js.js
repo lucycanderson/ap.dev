@@ -29,13 +29,6 @@ $(document).ready(function() {
     });
 
   }));
-
-    // initialise masonry grid
-  $('.grid').masonry({
-    // options
-    itemSelector: '.grid-item',
-    columnWidth: 200
-  });
   
   // add instagram feed to all pages
   if (Theme.showInstagramWidget) {
